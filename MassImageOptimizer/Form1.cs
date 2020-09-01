@@ -97,22 +97,22 @@ namespace AppSoftware.MassImageOptimizer
                 string fileExtension = fileInfo.Extension.ToLower();
                 fileExtension = fileExtension.Replace(".", "");
 
-                ImageFormatEnum format;
+                ImageFormat format;
 
                 try
                 {
-                    format = (ImageFormatEnum)Enum.Parse(typeof(ImageFormatEnum), fileExtension);
+                    format = (ImageFormat) Enum.Parse(typeof(ImageFormat), fileExtension, ignoreCase: true);
                 }
                 catch
                 {
-                    format = ImageFormatEnum.unrecognised;
+                    format = ImageFormat.Unrecognised;
                 }
 
                 fileName = fileInfo.Name;
 
                 imageSavePath = m_saveDirectory + fileName;
 
-                if (format != ImageFormatEnum.unrecognised)
+                if (format != ImageFormat.Unrecognised)
                 {
                     FileStream fileStream = fileInfo.OpenRead();
 
@@ -262,5 +262,10 @@ namespace AppSoftware.MassImageOptimizer
         int m_fileCount = 0;
 
         string m_saveDirectory = "";
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

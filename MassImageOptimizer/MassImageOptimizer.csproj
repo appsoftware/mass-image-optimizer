@@ -65,10 +65,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ImageCompressor.cs" />
-    <Compile Include="ImageFormatEnum.cs" />
-    <Compile Include="ImageFormatIdentifier.cs" />
+    <Compile Include="ImageFormat.cs" />
     <Compile Include="ImageResizer.cs" />
-    <Compile Include="ImageTypeEnum.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

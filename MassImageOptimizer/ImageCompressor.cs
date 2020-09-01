@@ -3,9 +3,6 @@ using System.Drawing.Imaging;
 
 namespace AppSoftware.MassImageOptimizer
 {
-    /// <summary>
-    /// Summary description for ImageCompressor
-    /// </summary>
     public class ImageCompressor
     {
         /// <summary>
@@ -16,7 +13,7 @@ namespace AppSoftware.MassImageOptimizer
         /// <param name="savePath"></param>
         /// <param name="imageFormat"></param>
         /// <param name="quality"></param>
-        public void CompressAndSaveImage(Bitmap imageToSave, string savePath, ImageFormatEnum imageFormat, int quality)
+        public void CompressAndSaveImage(Bitmap imageToSave, string savePath, ImageFormat imageFormat, int quality)
         {
             EncoderParameters encoderParams = new EncoderParameters();
 
@@ -24,11 +21,11 @@ namespace AppSoftware.MassImageOptimizer
 
             imageQuality[0] = quality;
 
-            EncoderParameter encParameter = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, imageQuality);
+            EncoderParameter encParameter = new EncoderParameter(Encoder.Quality, imageQuality);
             encoderParams.Param[0] = encParameter;
 
 
-            ImageCodecInfo imageCodecInfo = GetImageCodecInfo( imageFormat );
+            ImageCodecInfo imageCodecInfo = GetImageCodecInfo(imageFormat);
 
             imageToSave.Save(savePath, imageCodecInfo, encoderParams);
 
@@ -41,7 +38,7 @@ namespace AppSoftware.MassImageOptimizer
         /// </summary>
         /// <param name="imageFormat"></param>
         /// <returns></returns>
-        private ImageCodecInfo GetImageCodecInfo(ImageFormatEnum imageFormat)
+        private ImageCodecInfo GetImageCodecInfo(ImageFormat imageFormat)
         {
             ImageCodecInfo[] imageCodecArray = ImageCodecInfo.GetImageEncoders();
 
@@ -49,31 +46,31 @@ namespace AppSoftware.MassImageOptimizer
 
             switch (imageFormat)
             {
-                case ImageFormatEnum.bmp:
+                case ImageFormat.Bmp:
 
                     imageCodec = imageCodecArray[0];
                     break;
 
-                case ImageFormatEnum.jpeg:
+                case ImageFormat.Jpeg:
 
                     imageCodec = imageCodecArray[1];
                     break;
-                case ImageFormatEnum.jpg:
+                case ImageFormat.Jpg:
 
                     imageCodec = imageCodecArray[1];
                     break;
 
-                case ImageFormatEnum.gif:
+                case ImageFormat.Gif:
 
                     imageCodec = imageCodecArray[2];
                     break;
 
-                case ImageFormatEnum.tiff:
+                case ImageFormat.Tiff:
 
                     imageCodec = imageCodecArray[3];
                     break;
 
-                case ImageFormatEnum.png:
+                case ImageFormat.Png:
 
                     imageCodec = imageCodecArray[4];
                     break;

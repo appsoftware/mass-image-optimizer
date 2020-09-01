@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Globalization;
 
 namespace AppSoftware.MassImageOptimizer
 {
@@ -14,10 +15,9 @@ namespace AppSoftware.MassImageOptimizer
         /// <returns>A resized bitmap</returns>
         public static Bitmap ResizeBitmap( Bitmap originalBitmap, int requiredHeight, int requiredWidth )
         {
-            int[] heightWidthRequiredDimensions;
-
             // Pass dimensions to worker method depending on image type required
-            heightWidthRequiredDimensions = WorkDimensions(originalBitmap.Height, originalBitmap.Width, requiredHeight, requiredWidth);
+
+            var heightWidthRequiredDimensions = WorkDimensions(originalBitmap.Height, originalBitmap.Width, requiredHeight, requiredWidth);
 
 
             Bitmap resizedBitmap = new Bitmap( heightWidthRequiredDimensions[1], 
@@ -25,21 +25,20 @@ namespace AppSoftware.MassImageOptimizer
 
             const float resolution = 72;
 
-            resizedBitmap.SetResolution( resolution, resolution );
+            resizedBitmap.SetResolution(resolution, resolution);
 
-            Graphics graphic = Graphics.FromImage( (Image) resizedBitmap );
+            Graphics graphic = Graphics.FromImage(resizedBitmap);
 
             graphic.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
             graphic.DrawImage( originalBitmap, 0, 0, resizedBitmap.Width, resizedBitmap.Height );
 
             graphic.Dispose();
             originalBitmap.Dispose();
-            //resizedBitmap.Dispose(); // Still in use
 
+            // resizedBitmap still in use
 
             return resizedBitmap;
         }
-
 
         /// <summary>
         /// Works dimensions based on maximum width and height compared to original dimensions.
@@ -48,26 +47,23 @@ namespace AppSoftware.MassImageOptimizer
         /// </summary>
         private static int[] WorkDimensions(int originalHeight, int originalWidth, int requiredHeight, int requiredWidth )
         {
-            int imgHeight = 0;
-            int imgWidth = 0;
-
-            imgWidth = requiredHeight;
-            imgHeight = requiredWidth;
+            int imgWidth = requiredHeight;
+            int imgHeight = requiredWidth;
  
 
             int requiredHeightLocal = originalHeight;
             int requiredWidthLocal = originalWidth;
 
-            double ratio = 0;
+            double ratio;
 
             // Check height first
             // If original height exceeds maximum, get new height and work ratio.
+
             if ( originalHeight > imgHeight )
             {
-                //(decimal)ratio = (maxHeight / originalHeight); Doesn't work
-                ratio = double.Parse( ( (double) imgHeight / (double) originalHeight ).ToString() );
+                ratio = double.Parse( ((double) imgHeight / (double) originalHeight).ToString(CultureInfo.InvariantCulture));
                 requiredHeightLocal = imgHeight;
-                requiredWidthLocal = (int) ( (decimal) originalWidth * (decimal) ratio );
+                requiredWidthLocal = (int) ((decimal) originalWidth * (decimal) ratio );
             }
 
             // Check width second. It will most likely have been sized down enough 
@@ -75,9 +71,9 @@ namespace AppSoftware.MassImageOptimizer
             // If new width exceeds maximum, get new width and height ratio.
             if ( requiredWidthLocal >= imgWidth )
             {
-                ratio = double.Parse( ( (double) imgWidth / (double) originalWidth ).ToString() );
+                ratio = double.Parse(((double) imgWidth / (double) originalWidth).ToString(CultureInfo.InvariantCulture));
                 requiredWidthLocal = imgWidth;
-                requiredHeightLocal = (int) ( (double) originalHeight * (double) ratio );
+                requiredHeightLocal = (int) ((double) originalHeight * (double) ratio);
             }
 
             int[] heightWidthDimensionArr = { requiredHeightLocal, requiredWidthLocal };
