@@ -1,4 +1,4 @@
-﻿namespace AppSoftwareMassImageOptimizer
+﻿namespace AppSoftware.MassImageOptimizer
 {
     partial class Form1
     {

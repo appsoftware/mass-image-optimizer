@@ -15,8 +15,8 @@
 
 .vs/
 
-BulkImageOptimizer/bin/
-BulkImageOptimizer/obj/
+MassImageOptimizer/bin/
+MassImageOptimizer/obj/
 
 /Setup/Debug/
 

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.Windows.Forms;
-using AppSoftwareMassImageOptimizer;
 
-namespace BulkImageOptimizer
+namespace AppSoftware.MassImageOptimizer
 {
     static class Program
     {

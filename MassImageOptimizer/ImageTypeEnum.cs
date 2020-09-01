@@ -1,4 +1,4 @@
-﻿namespace AppSoftwareMassImageOptimizer
+﻿namespace AppSoftware.MassImageOptimizer
 {
     /// <summary>
     /// Image type options enum

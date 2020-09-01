@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace AppSoftwareMassImageOptimizer
+namespace AppSoftware.MassImageOptimizer
 {
     /// <summary>
     /// Handles conversion of original image to display pictures and thumbs from a single image array.
@@ -8,13 +8,6 @@ namespace AppSoftwareMassImageOptimizer
     /// </summary>
     public class ImageResizer
     {
-        // Constructor
-        public ImageResizer()
-        {
-       
-        }
-
-
         /// <summary>
         /// Takes arguments of file path and required image dimemsions (px) - string, int, int
         /// </summary>

@@ -8,8 +8,8 @@
     <ProjectGuid>{0FFEECBD-FCFC-46FA-B597-F12F4D701C8B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AppSoftwareMassImageOptimizer</RootNamespace>
-    <AssemblyName>App Software Mass Image Optimizer</AssemblyName>
+    <RootNamespace>AppSoftware.MassImageOptimizer</RootNamespace>
+    <AssemblyName>MassImageOptimizer</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>true</IsWebBootstrapper>
@@ -17,7 +17,7 @@
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
-    <PublishUrl>http://localhost/BulkImageOptimizer/</PublishUrl>
+    <PublishUrl>http://localhost/MassImageOptimizer/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>

@@ -1,4 +1,4 @@
-﻿namespace AppSoftwareMassImageOptimizer
+﻿namespace AppSoftware.MassImageOptimizer
 {
     /// <summary>
     /// Summary description for Options
@@ -11,7 +11,6 @@
         gif,
         tiff,
         png,
-
         unrecognised
     }
 }

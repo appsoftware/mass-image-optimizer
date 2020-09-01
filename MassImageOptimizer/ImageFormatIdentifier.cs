@@ -1,17 +1,10 @@
-﻿namespace AppSoftwareMassImageOptimizer
+﻿namespace AppSoftware.MassImageOptimizer
 {
     /// <summary>
     /// Summary description for ImageFormatIdentifier
     /// </summary>
     public class ImageFormatIdentifier
     {
-        public ImageFormatIdentifier()
-        {
-            //
-            // TODO: Add constructor logic here
-            //
-        }
-
         /// <summary>
         /// Takes a file extension and if recognised as an image, converts it to ImageFormatEnum
         /// </summary>

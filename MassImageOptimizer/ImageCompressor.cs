@@ -1,27 +1,22 @@
 ﻿using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace AppSoftwareMassImageOptimizer
+namespace AppSoftware.MassImageOptimizer
 {
     /// <summary>
     /// Summary description for ImageCompressor
     /// </summary>
     public class ImageCompressor
     {
-        public ImageCompressor()
-        {
-
-        }
-
         /// <summary>
         /// Compresses the image to a quality suitable for display on the web, and saves the 
         /// compressed file to disk
         /// </summary>
         /// <param name="imageToSave"></param>
         /// <param name="savePath"></param>
-        /// <param name="imageType"></param>
         /// <param name="imageFormat"></param>
-        public void CompressAndSaveImage( Bitmap imageToSave, string savePath, ImageFormatEnum imageFormat, int quality  )
+        /// <param name="quality"></param>
+        public void CompressAndSaveImage(Bitmap imageToSave, string savePath, ImageFormatEnum imageFormat, int quality)
         {
             EncoderParameters encoderParams = new EncoderParameters();
 
@@ -46,7 +41,7 @@ namespace AppSoftwareMassImageOptimizer
         /// </summary>
         /// <param name="imageFormat"></param>
         /// <returns></returns>
-        private ImageCodecInfo GetImageCodecInfo(ImageFormatEnum imageFormat )
+        private ImageCodecInfo GetImageCodecInfo(ImageFormatEnum imageFormat)
         {
             ImageCodecInfo[] imageCodecArray = ImageCodecInfo.GetImageEncoders();
 
@@ -84,7 +79,6 @@ namespace AppSoftwareMassImageOptimizer
                     break;
 
                 default:
-
                     imageCodec = null;
                     break;
             }
