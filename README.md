@@ -1,6 +1,6 @@
 # Mass Image Optimizer
 
-![Mass Image Optimizer](https://cdn.iocontent.com/api/v1.0/assets/p3rzfr3dgzy3eq6fcgbg2ejxqc/20151113-164545950/jl0p/appsoftware-mass-image-optimizer.png)
+![Mass Image Optimizer](https://github.com/garethrbrown/mass-image-optimizer/blob/master/Resources/MassImageOptimzerScreenShots.PNG?raw=true)
 
 This is an old tool that I still find my self using from time to time today.
 
